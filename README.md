@@ -1,4 +1,7 @@
-# C++ CMake Project Template
+# C++ Project Template
+## Forked and adapted from [ C++ CMake Project Template](https://github.com/drumaddict/cmake-init)
+
+[Setup Guide](https://github.com/cginternals/cmake-init/wiki/Setup-Guide)
 
 cmake-init is a copy and paste template, that provides the following features:
  * Cross Platform
@@ -19,40 +22,11 @@ The files of cmake-init are an instantiation of the templates containing:
 
 | Service | System | Compiler | Status |
 | ------- | ------ | -------- | -----: |
-|  [Travis-CI](https://travis-ci.org/cginternals/cmake-init) | Ubuntu 14.04 | GCC 4.8, Clang 3.5 | [![Build Status](https://travis-ci.org/cginternals/cmake-init.svg?branch=master)](https://travis-ci.org/cginternals/cmake-init) |
-|  [Travis-CI](https://travis-ci.org/cginternals/cmake-init) | macOS | AppleClang 7.3 | [![Build Status](https://travis-ci.org/cginternals/cmake-init.svg?branch=master)](https://travis-ci.org/cginternals/cmake-init) |
-| [AppVeyor]() | Windows | MSVC 2013<br>MSVC 2015<br>MSVC 2017 | [![Build status](https://ci.appveyor.com/api/projects/status/sy4f0p436p1g5tnp/branch/master?svg=true)](https://ci.appveyor.com/project/scheibel/cmake-init/branch/master)|
-| Jenkins <br><br><br><br> | Ubuntu 14.04 <br><br><br><br> | GCC 4.7 <br> GCC 4.8 <br> GCC 4.9 <br> GCC 5.4 <br> Clang 3.8 <br> | [![Build Status](https://jenkins.hpi3d.de/buildStatus/icon?job=cmake-init-linux-gcc4.7)](https://jenkins.hpi3d.de/job/cmake-init-linux-gcc4.7) <br> [![Build Status](https://jenkins.hpi3d.de/buildStatus/icon?job=cmake-init-linux-gcc4.8)](https://jenkins.hpi3d.de/job/cmake-init-linux-gcc4.8) <br> [![Build Status](https://jenkins.hpi3d.de/buildStatus/icon?job=cmake-init-linux-gcc4.9)](https://jenkins.hpi3d.de/job/cmake-init-linux-gcc4.9) <br> [![Build Status](https://jenkins.hpi3d.de/buildStatus/icon?job=cmake-init-linux-gcc5)](https://jenkins.hpi3d.de/job/cmake-init-linux-gcc5) <br> [![Build Status](https://jenkins.hpi3d.de/buildStatus/icon?job=cmake-init-linux-clang3.8)](https://jenkins.hpi3d.de/job/cmake-init-linux-clang3.8) <br> |
-| Jenkins <br><br> | Windows 10 <br><br> | MSVC 2013 Update 5 <br>  MSVC 2015 Update 1 <br> | [![Build Status](https://jenkins.hpi3d.de/buildStatus/icon?job=cmake-init-windows-msvc2013)](https://jenkins.hpi3d.de/job/cmake-init-windows-msvc2013) <br> [![Build Status](https://jenkins.hpi3d.de/buildStatus/icon?job=cmake-init-windows-msvc2015)](https://jenkins.hpi3d.de/job/cmake-init-windows-msvc2015) <br> |
-| Jenkins | OS X 10.10 | AppleClang 6.0 | [![Build Status](https://jenkins.hpi3d.de/buildStatus/icon?job=cmake-init-osx-clang3.5)](https://jenkins.hpi3d.de/job/cmake-init-osx-clang3.5) |
-
-Please note that our OS X build node is currently broken (physically). However, *cmake-init* is supported and maintained for OS X as well.
-
-
-## Design Decisions
-
-ToDo: revisit!
-
-#### Console vs. Windows App (Windows only)
-
-decisions:
-* we do not use the msvc subsystem linker flag
-* we do not use the add_executable win32 property
-* instead the ```set_target_properties``` with the ```WIN32_EXECUTABLE``` flag on target executable is used
-* we use the same subsystem for all configurations of a single target (no switching between, e.g., debug and release)
-
-rationale:
-typically, only released 'feature' applications are required to decide on their subsystem, and in the case of 'gui-heavy' applications the windows subsystem is preferred (since the std output is probably piped into widgets, logfiles, or even discard).
-
-furthermore, console output is usually more relevant for development/debugging purposes, already using console or IDE with appropriate console output handling
-
-
-
-ToDo: Add missing content, bring into markdown form
+|  [Travis-CI](https://travis-ci.org/drumaddict/cmake-init) | Ubuntu 14.04 | GCC 4.8, Clang 3.5 | [![Build Status](https://travis-ci.org/drumaddict/cmake-init.svg?branch=master)](https://travis-ci.org/drumaddict/cmake-init) |
+|  [Travis-CI](https://travis-ci.org/drumaddict/cmake-init) | macOS | AppleClang 7.3 | [![Build Status](https://travis-ci.org/drumaddict/cmake-init.svg?branch=master)](https://travis-ci.org/drumaddict/cmake-init) |
 
 
 Scenarios covered in cmake-init:
-
 
 1) Development
 
