@@ -1,5 +1,5 @@
 # C++ Project Template
-## Forked and adapted from [ C++ CMake Project Template](https://github.com/drumaddict/cmake-init)
+## Forked and adapted from [ C++ CMake Project Template](https://github.com/cginternals/cmake-init)
 
 [Setup Guide](https://github.com/cginternals/cmake-init/wiki/Setup-Guide)
 
