@@ -2,18 +2,18 @@
 #include <iostream>
 
 #include <baselib/baselib.h>
-#include <mylib/MyLib.h>
+#include <mylib/mylib.h>
 
 int main(int /*argc*/, char* /*argv*/[])
 {
     // Print library info
     baselib::printInfo();
-    mylib::printMaze();
+    mylib::printMyLib();
     std::cout << std::endl;
 
     // Main
-    std::cout << "Main" << std::endl;
     std::cout << "========================================" << std::endl;
+    std::cout << "Main" << std::endl;
     std::cout << std::endl;
 
     return 0;
