@@ -51,11 +51,11 @@ endif()
 # Meta information about the project #### [ADAPT]
 set(META_PROJECT_NAME        "template")
 set(META_PROJECT_DESCRIPTION "CMake Project Template")
-set(META_AUTHOR_ORGANIZATION "CG Internals GmbH")
-set(META_AUTHOR_DOMAIN       "https://github.com/cginternals/cmake-init/")
-set(META_AUTHOR_MAINTAINER   "opensource@cginternals.com")
-set(META_VERSION_MAJOR       "2")
-set(META_VERSION_MINOR       "0")
+set(META_AUTHOR_ORGANIZATION "Spiros Kabasakalis")
+set(META_AUTHOR_DOMAIN       "https://github.com/drumaddit/cmake-init/")
+set(META_AUTHOR_MAINTAINER   "kabasakalis@gmail.com")
+set(META_VERSION_MAJOR       "0")
+set(META_VERSION_MINOR       "1")
 set(META_VERSION_PATCH       "0")
 set(META_VERSION_REVISION    "${GIT_REV}")
 set(META_VERSION             "${META_VERSION_MAJOR}.${META_VERSION_MINOR}.${META_VERSION_PATCH}")
@@ -75,7 +75,6 @@ option(BUILD_SHARED_LIBS     "Build shared instead of static libraries."        
 option(OPTION_SELF_CONTAINED "Create a self-contained install with all dependencies." OFF)
 option(OPTION_BUILD_TESTS    "Build tests."                                           ON)
 option(OPTION_BUILD_DOCS     "Build documentation."                                   OFF)
-option(OPTION_BUILD_EXAMPLES "Build examples."                                        OFF)
 
 
 #

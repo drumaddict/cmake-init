@@ -8,7 +8,7 @@
 # List of modules [ADAPT]
 set(MODULE_NAMES
     baselib
-    fiblib
+    mylib
 )
 
 
