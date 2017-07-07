@@ -16,9 +16,9 @@ set(IDE_FOLDER "")
 add_subdirectory(baselib)
 add_subdirectory(mylib)
 
-# Examples
-set(IDE_FOLDER "Examples")
-add_subdirectory(examples)
+# Main
+set(IDE_FOLDER "Main")
+add_subdirectory(main)
 
 # Tests
 if(OPTION_BUILD_TESTS)

@@ -26,20 +26,18 @@ set(export_macro         "${target_id}_API")
 
 
 #
-# Sources
+# Sources [ADAPT]
 #
 
 set(include_path "${CMAKE_CURRENT_SOURCE_DIR}/include/${target}")
 set(source_path  "${CMAKE_CURRENT_SOURCE_DIR}/source")
 
 set(headers
-    ${include_path}/CTFibonacci.h
-    ${include_path}/CTFibonacci.inl
-    ${include_path}/Fibonacci.h
+    ${include_path}/mylib.h
 )
 
 set(sources
-    ${source_path}/Fibonacci.cpp
+    ${source_path}/MyLib.cpp
 )
 
 # Group source files
