@@ -1,5 +1,5 @@
 
-// This is a generated file. Do not edit!
+// This is a generated file. Do not edit! [ADAPT]
 
 #ifndef FIBLIB_COMPILER_DETECTION_H
 #define FIBLIB_COMPILER_DETECTION_H
