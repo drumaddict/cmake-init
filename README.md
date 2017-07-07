@@ -1,6 +1,6 @@
 # C++ Project Template
 ## Forked and adapted from [ C++ CMake Project Template](https://github.com/cginternals/cmake-init)
-
+#### [ADAPT]
 [Setup Guide](https://github.com/cginternals/cmake-init/wiki/Setup-Guide)
 
 cmake-init is a copy and paste template, that provides the following features:

@@ -6,7 +6,7 @@
 # CMake version
 cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
 
-# Meta information about the project
+# Meta information about the project [ADAPT]
 set(META_PROJECT_NAME "template")
 
 # Declare project
@@ -34,13 +34,13 @@ endif()
 # Function: Build test and add command to execute it via target 'test'
 function(add_test_without_ctest target)
     add_subdirectory(${target})
-    
+
     if(NOT TARGET ${target})
         return()
     endif()
-    
+
     add_dependencies(test ${target})
-    add_custom_command(TARGET test POST_BUILD 
+    add_custom_command(TARGET test POST_BUILD
         COMMAND $<TARGET_FILE:${target}> --gtest_output=xml:gtests-${target}.xml)
 endfunction()
 
@@ -69,16 +69,16 @@ target_link_libraries(gmock-dev
 )
 
 
-# 
+#
 # Target 'test'
-# 
+#
 
 add_custom_target(test)
 set_target_properties(test PROPERTIES EXCLUDE_FROM_DEFAULT_BUILD 1)
 
 
-# 
-# Tests
-# 
+#
+# Tests [ADAPT]
+#
 
 add_test_without_ctest(fiblib-test)

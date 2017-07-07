@@ -1,11 +1,11 @@
 
 # This config script tries to locate the project either in its source tree
 # or from an install location.
-# 
+#
 # Please adjust the list of submodules to search for.
 
 
-# List of modules
+# List of modules [ADAPT]
 set(MODULE_NAMES
     baselib
     fiblib
@@ -49,5 +49,5 @@ else()
     find_modules("build-debug/cmake")
 endif()
 
-# Signal success/failure to CMake
+# Signal success/failure to CMake [ADAPT]
 set(template_FOUND ${MODULE_FOUND})

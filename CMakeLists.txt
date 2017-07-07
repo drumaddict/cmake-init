@@ -48,7 +48,7 @@ if(NOT GIT_SHA1)
     set(GIT_REV "0")
 endif()
 
-# Meta information about the project
+# Meta information about the project #### [ADAPT]
 set(META_PROJECT_NAME        "template")
 set(META_PROJECT_DESCRIPTION "CMake Project Template")
 set(META_AUTHOR_ORGANIZATION "CG Internals GmbH")
