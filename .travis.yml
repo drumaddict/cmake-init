@@ -14,6 +14,7 @@ compiler:
 env:
   global:
     - CMAKE_OPTIONS="-DOPTION_BUILD_EXAMPLES=On"
+    - secure: "pVUvE9set2Xt6ga8qKhEJXonHYL0SYPjErxugL9Q6FH0NdtlOp6n47TQ8UYxzpI1nltcd+zTPsxfpWplGFkZSnt3oAVm5sVZ3biPk29wkYfFnJdiBV/6G2S5sTGiagzYzKqesnF2pWKXhwOqFlALziG/ipnopIw/xtmIe4g+xlR1A3Xe19ga4/15p4ATAtUvDR2/2Lt9hCIYzANTMvWF2VVmtugtvYsh4ZhSam22uoYZ0Hdt46GhEyogdYTf9cLGL5HmiZ9hCNlsR3/TkVsMVB7OoWR6/CHO6Eh+F27bbaPIQo1uErr8M0r5rr826BcyEJYxUnbIK65FzyqAAH/Zu9Mga01aG859N09Xpqb0xsgqSJm8uL41aiYSHa11KzgKHwq4mHx06128olUi4Gs6Y86U8hrdBEcMhc+JySYpYc9B/shspJ0YUNKeehxX7z9ourywzevhkh2fHE99Ht9MSwKzG3kvJzVzQHgXQBdY+L4AIzBNKf9siwETmTqkkmTp1ONP7SUR3AxwxxiNh1s6HTqod7ZTpme5Din4F6o2ygRJTlPTOpRKPK1dKRB9V9gloDPiVimc1aZMy/8hbkrmwZMTD7oA6ApPzf3XtB5IaEX5fn4rBT39IxL8OvLSNBUJEZ9CmlsS4ud95/Y+yxXoeDmE7e5v2PPHhh6gSFFPsvE="
   matrix:
     - CMAKE_CONFIGURATION=release BUILD_DIR=build
     - CMAKE_CONFIGURATION=debug BUILD_DIR=build-debug
@@ -26,13 +27,18 @@ matrix:
 before_install:
   - if [ $TRAVIS_OS_NAME == linux ]; then sudo apt-get install -qq cmake qt5-default cppcheck clang-tidy-3.8; fi
   - if [ $TRAVIS_OS_NAME == osx ]; then brew update && brew install qt5 cppcheck; fi
-
+  - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
 before_script:
   - ./configure
   - if [ $CMAKE_CONFIGURATION == release ]; then ./configure; fi
   - if [ $CMAKE_CONFIGURATION == debug ]; then ./configure debug; fi
 
 script:
+  - if [[ "${COVERITY_SCAN_BRANCH}" == 1 ]];
+      then
+        echo "Don't build on coverty_scan branch.";
+        exit 0;
+    fi
   - cmake --build $BUILD_DIR
   - cmake --build $BUILD_DIR --target test
   - cmake --build $BUILD_DIR --target check-all
@@ -40,5 +46,13 @@ script:
 # safelist
 branches:
   only:
-    - master
-    - simple
+    - coverity_scan
+addons:
+  coverity_scan:
+    project:
+      name: "drumaddict/cmake-init"
+      description: "Build submitted via Travis CI"
+    notification_email: kabasakalis@gmail.com
+    build_command_prepend: "cd ."
+    build_command:   cmake --build $BUILD_DIR
+    branch_pattern: coverity_scan
