@@ -31,12 +31,8 @@ matrix:
 
 before_install:
   - if [ $TRAVIS_OS_NAME == linux ]; then sudo apt-get install -qq cmake qt5-default cppcheck clang-tidy-3.8; fi
-  - if [ $TRAVIS_OS_NAME == osx ]; then brew update && brew install qt5 cppcheck; fi
-  # Install lcov 1.13
-  - wget http://downloads.sourceforge.net/ltp/lcov-1.13.tar.gz
-  - tar -xvf lcov-1.13.tar.gz
-  - cd lcov-1.13 && sudo make install
-  - cd ..
+  - if [ $TRAVIS_OS_NAME == osx ]; then brew update && brew install qt5 cppcheck; file
+  - sudo apt-get install lcov
 
 before_script:
   - ./configure
@@ -51,8 +47,8 @@ script:
 # safelist
 branches:
   only:
-  - master
-  - simple
+    - master
+    - simple
 
 after_success:
   # Creating report
