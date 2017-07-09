@@ -25,7 +25,7 @@ The files of cmake-init are an instantiation of the templates containing:
 |  [Travis-CI](https://travis-ci.org/drumaddict/cmake-init) | Ubuntu 14.04 | GCC 4.8, Clang 3.5 | [![Build Status](https://travis-ci.org/drumaddict/cmake-init.svg?branch=master)](https://travis-ci.org/drumaddict/cmake-init) |
 |  [Travis-CI](https://travis-ci.org/drumaddict/cmake-init) | macOS | AppleClang 7.3 | [![Build Status](https://travis-ci.org/drumaddict/cmake-init.svg?branch=master)](https://travis-ci.org/drumaddict/cmake-init) |
 |  [Coverity](https://scan.coverity.com/projects/drumaddict-cmake-init) | Ubuntu 14.04 | GCC 4.8, Clang 3.5 | [![Coverity Build Status](https://scan.coverity.com/projects/13112/badge.svg)](https://scan.coverity.com/projects/drumaddict-cmake-init) |
-|  [CodeCov](https://codecov.io/gh/drumaddict/cmake-init) |   |  | [![Documentation](https://codecov.io/gh/drumaddict/cmake-init/branch/master/graph/badge.svg)](https://codecov.io/gh/drumaddict/cmake-init)) |
+|  [CodeCov](https://codecov.io/gh/drumaddict/cmake-init) |   |  | [![Test Coverage](https://codecov.io/gh/drumaddict/cmake-init/branch/master/graph/badge.svg)](https://codecov.io/gh/drumaddict/cmake-init) |
 |  [Codedocs](https://codedocs.xyz/drumaddict/cmake-init/) |   |  | [![Documentation](https://codedocs.xyz/drumaddict/cmake-init.svg)](https://codedocs.xyz/drumaddict/cmake-init/) |
 
 Scenarios covered in cmake-init:
