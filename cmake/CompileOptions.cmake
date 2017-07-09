@@ -137,6 +137,8 @@ if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "GNU" OR "${CMAKE_CXX_COMPILER_ID}" MATCH
         -Wsign-conversion
         # -Wmisleading-indentation
 
+        -fprofile-arcs
+        -ftest-coverage
         $<$<CXX_COMPILER_ID:GNU>:
             -Wmaybe-uninitialized
 

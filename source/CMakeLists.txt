@@ -20,11 +20,26 @@ add_subdirectory(fiblib)
 set(IDE_FOLDER "Examples")
 add_subdirectory(examples)
 
+
+
+
 # Tests
 if(OPTION_BUILD_TESTS)
     set(IDE_FOLDER "Tests")
     add_subdirectory(tests)
 endif()
+
+
+# Test Coverage
+
+if (CMAKE_BUILD_TYPE MATCHES Debug)
+  if(OPTION_TEST_COVERAGE)
+    include(CodeCoverage)
+    setup_target_for_coverage(${META_PROJECT_NAME}_coverage test coverage)
+    # setup_target_for_coverage_cobertura(${PROJECT_NAME}_cobertura poptests coverage --gtest_output=xml:coverage.junit.xml)
+  endif()
+endif()
+
 
 
 #
