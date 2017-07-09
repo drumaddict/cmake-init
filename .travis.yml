@@ -32,9 +32,8 @@ matrix:
     compiler: gcc
 
 before_install:
-  - if [ $TRAVIS_OS_NAME == linux ]; then sudo apt-get install -qq cmake qt5-default cppcheck clang-tidy-3.8; fi
-  - if [ $TRAVIS_OS_NAME == osx ]; then brew update && brew install qt5 cppcheck; fi
-  - sudo apt-get install lcov
+  - if [ $TRAVIS_OS_NAME == linux ]; then sudo apt-get install -qq cmake qt5-default lcov cppcheck clang-tidy-3.8; fi
+  - if [ $TRAVIS_OS_NAME == osx ]; then brew update && brew install qt5 cppcheck lcov; fi
 
 before_script:
   - ./configure
@@ -46,15 +45,9 @@ script:
   - cmake --build $BUILD_DIR --target test
   - cmake --build $BUILD_DIR --target check-all
 
-# safelist
-branches:
-  only:
-    - master
-    - simple
 
 after_success:
-  # Creating reports
-  - cmake --build $BUILD_DIR --target test
+    # Creating report
   - cd ${TRAVIS_BUILD_DIR}
   - lcov --directory . --capture --output-file coverage.info # capture coverage info
   - lcov --remove coverage.info '/usr/*' --output-file coverage.info # filter out system
@@ -62,3 +55,8 @@ after_success:
   # Uploading report to CodeCov
   - bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
 
+# safelist
+branches:
+  only:
+    - master
+    - simple
